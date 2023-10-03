@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            font-size: 40px;
+            border-collapse: collapse;
+        }
+        /* , 每個都會選到 */
+        table , tr , td {
+            color: red;
+            border: 5px solid rgb(209, 209, 209);
+        }
+        td{
+            background-color: rgb(18, 80, 100);
+            width: 100px;
+            height: 100px;
+        }
+
+        /* > 下一層會改變 */
+        .s1 > td{
+            color: rgb(204, 161, 112);
+        }
+        .s2 > td{
+            color: rgb(100, 214, 125);
+        }
+        .s3 > td{
+            color: rgb(189, 109, 196);
+        }        
+    </style>
+</head>
+
+<body>
+    <h3>table 九宮格</h3>
+</body>
+<table>
+    <tr class="s1">
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr class="s2">
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr class="s3">
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+    </table>
+    <br><br>
+<hr>
+    <h3>table 九宮格 colspan</h3>
+
+<table>
+    <tr class="s1">
+        <td colspan="2">1</td>
+        <!--<td>2</td>-->
+        <td>3</td>
+    </tr>
+    <tr class="s2">
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr class="s3">
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+    </table>
+    <br>
+<hr>
+    <h3>table 九宮格 rowspan</h3>
+
+<table>
+    <tr class="s1">
+        <td rowspan="3">1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr class="s2">
+        <!--<td>4</td>-->
+        <td>5</td>
+        <td rowspan="2">6</td>
+    </tr>
+    <tr class="s3">
+        <!--<td>7</td>-->
+        <td>8</td>
+        <!--<td>9</td>-->
+    </tr>
+    </table>
+</body>
+</html>
