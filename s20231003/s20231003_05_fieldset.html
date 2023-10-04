@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資料填寫</title>
+    <style>
+        fieldset{
+            border: 2px solid black;            
+            margin: auto;
+            width: 500px;     
+            background-color: lightgoldenrodyellow;
+        }
+        .text-center{
+            text-align: center ;
+        }
+        .table{
+            margin: auto;            
+        }
+        .box{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>    
+    <div class="container">        
+        <fieldset>
+            <legend  class="text-center"><h1>HR報表</h1></legend>
+            <table class="table">
+                <tr>
+                    <td>                    
+            <p>姓名
+            <form>
+                <input type="text" name="username"
+                    placeholder="王大明">
+            </form>
+            </p>
+            <p>手機號碼
+                <!-- 
+                    pattern 設定電話號碼格式；
+                    placeholder 欄位提示文字；
+                    title 輸入錯誤時的提示文字 -->
+                <form>
+                    <input type="tel" name="usertel"
+                    pattern="[0-9]{4}-[0-9]{6}" 
+                    placeholder="例如 0912-345678"
+                    title="例如 0912-345678">
+                </form>
+            </p>
+            <p>e-mial
+                <form>
+                    <input type="email" name="useremail"                    
+                    placeholder="例如 abc@gmail.com">                    
+                </form>
+            </p>
+            <p>通訊地址
+                <form>
+                    <input type="text">
+                </form>
+            </p>
+            <p>下拉選單
+                <select name="" id="">
+                    <option value="請選擇">請選擇</option>
+                    <option value="選項1">選項1</option>
+                    <option value="選項2">選項2</option>
+                    <option value="選項3">選項3</option>
+                </select>
+            </p>
+            <p>單選
+                <input type="radio" name="單選" id="選擇1">選擇1
+                <input type="radio" name="單選" id="選擇2">選擇2
+                <input type="radio" name="單選" id="選擇3">選擇3
+            </p>
+            <p>多選
+                <input type="checkbox" name="boxbox" id="1選項">1選項
+                <input type="checkbox" name="boxbox" id="2選項">2選項
+                <input type="checkbox" name="boxbox" id="3選項">3選項
+            </p>
+            <p>備註<br>
+                <textarea name="" id="" cols="30" rows="10"
+                placeholder="你想說的話"></textarea>
+            </p>
+            <div class="text-center">                  
+            <p>
+                <button type="submit">提交</button>
+            </p>
+            <p>
+                <button type="reset">重整</button>
+            </p>
+            </div>                              
+                    </td>
+                </tr>
+            </table>
+        </fieldset>      
+    </div>
+</body>
+</html>

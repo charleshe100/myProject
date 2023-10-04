@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人資料填寫</title>
+    <style>
+        fieldset{
+            border: 2px solid black;            
+            margin: auto;
+            width: 500px;     
+            background-color: lightgoldenrodyellow;
+        }
+        .text-center{
+            text-align: center ;
+        }
+        .table{
+            margin: auto;            
+        }
+        .box{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>    
+    <div class="container">        
+        <fieldset>
+            <legend  class="text-center"><h1>HR報表</h1></legend>
+            <table class="table">
+            <tr>
+            <td>
+            <form>                                
+            <p>姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            
+                <input type="text" name="username"
+                    placeholder="王大明">            
+            </p>
+            <p>手機號碼
+                <!-- 
+                    pattern 設定電話號碼格式；
+                    placeholder 欄位提示文字；
+                    title 輸入錯誤時的提示文字 -->
+                
+                    <input type="tel" name="usertel"
+                    pattern="[0-9]{4}-[0-9]{6}" 
+                    placeholder="例如 0912-345678"
+                    title="例如 0912-345678">                
+            </p>
+            <p>e-mial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                    <input type="email" name="useremail"                    
+                    placeholder="例如 abc@gmail.com">               
+                
+            </p>
+            <p>通訊地址                
+                    <input type="text">                
+            </p>
+            <p>應徵工作
+                <select name="" id="">
+                    <option value="請選擇">請選擇</option>
+                    <option value="前端">前端</option>
+                    <option value="後端">後端</option>
+                    <option value="全端">全端</option>
+                </select>
+            </p>
+            <p>個性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="單選" id="活潑">活潑
+                <input type="radio" name="單選" id="文靜">文靜
+                <input type="radio" name="單選" id="淡定">淡定
+            </p>
+            <p>會的程式
+                <input type="checkbox" name="boxbox" id="HTML">HTML
+                <input type="checkbox" name="boxbox" id="CSS">CSS
+                <input type="checkbox" name="boxbox" id="PHP">PHP
+            </p>
+            <p>備註<br>
+                <textarea name="" id="" cols="30" rows="10"
+                placeholder="你想說的話"></textarea>
+            </p>
+            <div class="text-center">                  
+            <p>
+                <button type="submit">提交</button>
+            </p>
+            <p>
+                <button type="reset">重整</button>
+            </p>
+            </div>
+            </form>                              
+                    </td>
+                </tr>
+            </table>
+        </fieldset>      
+    </div>
+</body>
+</html>
