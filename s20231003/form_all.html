@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .container{
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            background: lightgoldenrodyellow;
+        }
+        .box{
+            margin: auto;
+            width: 90%;
+            height: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+    <fieldset>
+        <legend>input element</legend>
+    <form 
+    accept-charset=""  
+    name=""
+    novalidate
+    target="">
+    <!-- 
+    accept-charset=""  設定表單資料的字元編碼方式
+    name="" 表單的名稱
+    novalidate 在提交表單時，不要進行驗證
+    target="" 表單處理的顯示方式 --
+            _blank	The response is displayed in a new window or tab
+            _self	The response is displayed in the same frame (this is default)
+            _parent	The response is displayed in the parent frame
+            _top	The response is displayed in the full body of the window
+            framename	The response is displayed in a named iframe>
+             -->
+    <p>文字：<input type="text" name="username" maxlength="10" required></p> <!-- maxlength 最多X字元 -->
+    <p>搜尋：<input type="search" name="keyword"></p>
+    <p>密碼：<input type="password" placeholder="至少8個字元" minlength="8" required></p> <!-- placeholder 顯示提示文字；minlength 最少X字元 -->
+    <p>E-mail：<input type="email" name="useremail" multiple pattern=".+@gmail.com"></p> <!-- multiple 允許以,隔開多個email；pattern 設定輸入格式 -->
+    <p>電話：<input type="tel" name="usertel"
+              pattern="[0-9]{4}-[0-9]{6}"  
+              placeholder="例如 0912-345678" 
+              title="例如 0912-345678"></p>  
+            <!-- pattern 設定輸入格式；placeholder 提示文字；titl 輸入錯誤時的提示 -->
+    <p>網址：<input type="url" name="weburl"></p>
+    <p>數值：<input type="number" name="num" min="0" max="10" step="2" value="6"></p><!-- min 最小值；max 最大值；step 數值間隔；value 起始值 -->
+    <p>範圍：<input type="range" name="ran" min="0" max="100" step="5" value="50"></p>
+    <p><input type="reset" value="重整">
+       <input type="submit" value="送出"></p>
+    <p><input type="button" value="上一頁"
+        onclick="history.go(-1);"> <!-- 這是 JavaScript 程式碼 -->
+       <input type="button" value="下一頁"
+        onclick="history.go(1);"></p>
+    <p>圖片超連結：<input type="image" src="https://pic.ntimg.cn/file/20230406/5252463_162210146120_2.jpg" width="200" alt="訂閱我的頻道"></p> <!-- src 指定內部或外部資源位置；alt 當圖片失效時，會顯示的文字 -->
+    <p>單選：<input type="radio" name="userage" value="age1">未滿20歲
+       <input type="radio" name="userage" value="age2" checked>20~29歲 <!-- checked 預設選取 -->
+       <input type="radio" name="userage" value="age3">30歲以上</p>
+    <p>可複選：<input type="checkbox" name="food" value="food1">炸雞
+       <input type="checkbox" name="food" value="food2" checked>鹹酥雞
+       <input type="checkbox" name="food" value="food3">桶仔雞</p>
+    <p><input type="hidden" name="author" value="Tim"></p> <!-- type="hidden"用來傳送不需要使用輸入，但卻需要回傳web伺服器的資料 -->
+    <p>西元日期：<input type="date"></p>
+    <p>12小時制：<input type="time"></p>
+    <p>本地日期時間：<input type="datetime-local"></p>
+    <p>西元月份：<input type="month"></p>
+    <p>週數：<input type="week">
+    <p><input type="color" name="clr"></p>
+
+<hr>
+    </form>
+    <form method="post"
+    enctype="multipart/form-data"
+    action="handler.php" >
+    <!-- method="post" 將表單資料傳回web伺服器的方式
+                get 附在網址後面傳送，適合少量、不要求安全的資料，例如，關鍵字
+                post 透過HTTP標頭傳送，適合大量、要求安全的資料，例如，上傳檔案、密碼
+         enctype="multipart/form-data" 允許上傳檔案給web伺服器
+                appliction/x-www-form-urlencoded 預設
+                text/plain 傳送到e-mail
+         action="handler.php" 表單處理程式的網址 -->
+    <p>上傳檔案：<input type="file" name="upfile" size="30"></p> <!-- 若要input type="file" 就要設定上面三個值 -->
+    <p><input type="reset" value="重整">
+       <input type="submit" value="送出"></p>
+    </form>
+    </fieldset>       
+<hr>
+<fieldset>
+    <legend>textarea element</legend>
+    <form>多行文字：<br>
+        <textarea name="area" id="" cols="30" rows="10">
+            想說的話
+        </textarea>
+    </form>
+</fieldset>
+<hr>
+<fieldset>
+    <legend>select optgroup option element</legend>
+    <form>
+        <label>選擇餐點：</label>        
+        <select name="menu">
+        <option value="請選擇" disabled>請選擇</option>
+        <optgroup label="義大利麵">
+        <!-- 
+        autocomplete="" 設定是否啟用自動完成功能
+        autofocus 載入網頁時，將焦點移到下拉式清單
+        disabled 取消下拉式清單
+        multiple 允許複選
+        required 必須選擇項目
+        size="" 下拉式清單的高度（列數）
+        form="formid" 下拉式清單隸屬於id屬性為formid的表單 --> 
+        <option value="foodd1">番茄海鮮</option>
+        <option value="foodd2">白酒蛤蜊</option>
+        <option value="foodd3">培根鮮蔬</option></optgroup>
+        <optgroup label="燉飯">
+        <option value="foodd4">青醬嫩雞</option>
+        <option value="foodd5">西西里炸魚</option>
+         <!-- 
+        value=""
+        disabled 取消選項
+        label="" 設定選項的標籤文字
+        selected 預設選取 -->
+        </optgroup>
+        </select>
+    </form>
+</fieldset>
+<hr>
+<fieldset>
+    <legend>button element</legend>
+    <form>
+        <button type="submit">送出</button>
+        <button type="reset">重整</button>
+    </form>
+</fieldset>
+<hr>
+<fieldset>
+    <legend>label element</legend>
+    <form>
+        <label for="account">帳號：</label>
+        <input type="text" id="account"> 
+        <!-- label 跟 id 的組合，是不是跟 name 一樣？ -->
+    </form>
+</fieldset>
+    </div>
+</div>
+</body>
+
+</html>
