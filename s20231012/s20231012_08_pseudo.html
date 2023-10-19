@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table{
+            width: 80%;
+            margin: auto;
+        }
+
+        .money::before{
+            content: "NT$";
+        }
+        .money::after{
+            content: "元";
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <table>
+        <tr>
+            <th width="15%">姓名</th>
+            <th width="20%">獎金</th>
+            <th width="20%">績效成長</td>
+            <th>備註</td>
+        </tr>
+        <tr>
+            <td>小美</td>
+            <td class="money">10,000</td>
+        </tr>
+        <tr>
+            <td>小王</td>
+            <td class="money">30,000</td>
+        </tr>
+        <tr>
+            <td>小陳</td>
+            <td class="money">50,000</td>
+        </tr>        
+    </table>
+</div>
+
+
+</body>
+
+</html>

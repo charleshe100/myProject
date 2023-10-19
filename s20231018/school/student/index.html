@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        table,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            /* font-size: 20px; */
+        }        
+        table{
+            width: 100%;
+        }
+        td{
+            height: 30px;
+        }
+        th{
+            height: 30px;
+            background: #aaa;
+        }
+        tr:nth-child(odd){
+	    background-color: #eee;	    
+        }
+        .text-right{
+            text-align: right;
+        }
+        .text-right a{
+            text-decoration: none;
+        }
+        .text-center{
+            text-align: center;
+        }
+        nav{
+            background: lightblue;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container text-right">
+    <nav class="text-center">
+        <a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="./index.html">學生</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="../teacher/index.html">老師</a>
+    </nav>
+<h1 class="text-center">Student List</h1>
+<a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>mobile</th>
+        <th>pic</th>
+        <th>修改&nbsp;&nbsp;/&nbsp;&nbsp;刪除</a></th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><a href="./edit.html?id=1">amy</a></td>
+        <td>0911-111-111</td>
+        <td>
+            <img src="https://picsum.photos/id/42/100/100" alt="">
+            <br>amy.jpg</td>
+        <td><a href="./edit.html?id=1">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=1">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="./edit.html?id=2">bob</a></td>
+        <td>0922-222-222</td>
+        <td>
+            bob.jpg</td>
+        <td><a href="./edit.html?id=2">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=2">&nbsp;&nbsp;Del</a></td>
+    </tr> 
+    <tr>
+        <td>3</td>
+        <td><a href="./edit.html?id=3">cat</a></td>
+        <td>0933-333-333</td>
+        <td>
+            cat.jpg</td>
+        <td><a href="./edit.html?id=3">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=3">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="./edit.html?id=4">dog</a></td>
+        <td>0944-444-444</td>
+        <td>
+            dog.jpg</td>
+        <td><a href="./edit.html?id=4">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=4">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="./edit.html?id=5">egg</a></td>
+        <td>0955-555-555</td>
+        <td>
+            egg.jpg</td>
+        <td><a href="./edit.html?id=5">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=5">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><a href="./edit.html?id=6">food</a></td>
+        <td>0966-666-666</td>
+        <td>
+            food.jpg</td>
+        <td><a href="./edit.html?id=6">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=6">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><a href="./edit.html?id=7">good</a></td>
+        <td>0977-777-777</td>
+        <td>
+            good.jpg</td>
+        <td><a href="./edit.html?id=7">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=7">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><a href="./edit.html?id=8">hello</a></td>
+        <td>0988-888-888</td>
+        <td>
+            hello.jpg</td>
+        <td><a href="./edit.html?id=8">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=8">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><a href="./edit.html?id=9">ivy</a></td>
+        <td>0999-999-999</td>
+        <td>
+            ivy.jpg</td>
+        <td><a href="./edit.html?id=9">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=9">&nbsp;&nbsp;Del</a></td>
+    </tr>     
+</table>
+
+</div>
+
+
+
+</body>
+
+</html>

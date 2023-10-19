@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        table,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            /* font-size: 20px; */
+        }        
+        table{
+            width: 100%;
+        }
+        td{
+            height: 30px;
+        }
+        th{
+            height: 30px;
+            background: #aaa;
+        }
+        tr:nth-child(odd){
+	    background-color: #eee;	    
+        }
+        .text-right{
+            text-align: right;
+        }
+        .text-right a{
+            text-decoration: none;
+        }
+        .text-center{
+            text-align: center;
+        }
+        nav{
+            background: lightpink;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container text-right">
+    <nav class="text-center">
+        <a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="../student/index.html">學生</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="./index.html">老師</a>
+    </nav>
+<h1 class="text-center">Teacher List</h1>
+<a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>E-mail</th>
+        <th>mobile</th>
+        <th>pic</th>
+        <th>修改&nbsp;&nbsp;/&nbsp;&nbsp;刪除</a></th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><a href="./edit.html">teacher1</a></td>
+        <td>teacher1@gmail.com</td>
+        <td>0910-111-111</td>
+        <td>
+            <img src="https://picsum.photos/id/22/100/100" alt="">
+            <br>teacher1.jpg</td>
+        <td><a href="./edit.html?id=1">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=1">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><a href="./edit.html?id=2">teacher2</a></td>
+        <td>teacher2@gmail.com</td>
+        <td>0910-222-222</td>
+        <td>
+            teacher2.jpg</td>
+        <td><a href="./edit.html?id=2">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=2">&nbsp;&nbsp;Del</a></td>
+    </tr> 
+    <tr>
+        <td>3</td>
+        <td><a href="./edit.html?id=3">teacher3</a></td>
+        <td>teacher3@gmail.com</td>
+        <td>0910-333-333</td>
+        <td>
+            teacher3.jpg</td>
+        <td><a href="./edit.html?id=3">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=3">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="./edit.html?id=4">teacher4</a></td>
+        <td>teacher4@gmail.com</td>
+        <td>0910-444-444</td>
+        <td>
+            teacher4.jpg</td>
+        <td><a href="./edit.html?id=4">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=4">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="./edit.html?id=5">teacher5</a></td>
+        <td>teacher5@gmail.com</td>
+        <td>0910-555-555</td>
+        <td>
+            teacher5.jpg</td>
+        <td><a href="./edit.html?id=5">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=5">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><a href="./edit.html?id=6">teacher6</a></td>
+        <td>teacher6@gmail.com</td>
+        <td>0910-666-666</td>
+        <td>
+            teacher6.jpg</td>
+        <td><a href="./edit.html?id=6">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=6">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><a href="./edit.html?id=7">teacher7</a></td>
+        <td>teacher7@gmail.com</td>
+        <td>0910-777-777</td>
+        <td>
+            teacher7.jpg</td>
+        <td><a href="./edit.html?id=7">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=7">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><a href="./edit.html?id=8">teacher8</a></td>
+        <td>teacher8@gmail.com</td>
+        <td>0910-888-888</td>
+        <td>
+            teacher8.jpg</td>
+        <td><a href="./edit.html?id=8">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=8">&nbsp;&nbsp;Del</a></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td><a href="./edit.html?id=9">teacher9</a></td>
+        <td>teacher9@gmail.com</td>
+        <td>0910-999-999</td>
+        <td>
+            teacher9.jpg</td>
+        <td><a href="./edit.html?id=9">Edit&nbsp;&nbsp;</a>/
+            <a href="./del.html?id=9">&nbsp;&nbsp;Del</a></td>
+    </tr>     
+</table>
+
+</div>
+
+
+
+</body>
+
+</html>
