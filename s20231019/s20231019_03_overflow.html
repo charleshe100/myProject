@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;            
+        }
+        table{
+            width: 100%;
+            table-layout: fixed;
+        }
+        tr,td{
+            width: 100%;
+            height: 400px;
+            padding: 5px;
+        }        
+        form{
+            text-align: center;
+        }
+        input[type='text'] {            
+            height: 50px;
+            width: 500px;
+        }
+        input[type='submit'] {
+            height: 50px;
+            width: 100px;
+        }
+        iframe {
+            width: 100%;
+            height: 70vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containter">      
+        <form action="" method="get">  
+        <input type="text">
+        <input type="submit" value="submit">
+        </form>
+    </div>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <iframe src="https://www.merriam-webster.com/dictionary/apple" frameborder="0"></iframe>
+                </td>
+                <td>
+                    <iframe src="https://www.dictionary.com/browse/apple" frameborder="0"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
