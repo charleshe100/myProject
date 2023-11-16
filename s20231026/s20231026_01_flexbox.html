@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-areas: 
+            "header header header"
+            "side1 main side2"
+            "footer footer footer";
+            /* flex-direction: row-reverse; */
+            /* justify-content: space-between; */
+            width: 100%;
+            height: 80vh;
+            text-align: center;            
+            /* background-color: lightblue; */
+        }
+
+        /* .item {
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+        } */
+        .header{
+            grid-area: header;
+            background-color: lightblue;
+        }
+        .main{
+            grid-area: main;
+            background-color: lightpink;
+        }
+        .side1{
+            grid-area: side1;
+            background-color: lightsalmon;
+        }
+        .side2{
+            grid-area: side2;
+            background-color: lightslategray;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- container -->
+        <!-- <div class="item">itme1</div>
+        <div class="item">itme2</div>
+        <div class="item">itme3</div> -->
+        <div class="header">header</div>
+        <div class="main">main</div>
+        <div class="side1">side1</div>
+        <div class="side2">side2</div>
+        <div class="footer">footer</div>
+
+    </div>
+</body>
+
+</html>

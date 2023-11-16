@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container {
+        display: flex;        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
+        height: 100vh;
+        background-color: lightblue;
+        margin: auto;
+    }
+    .item {
+        width: 30%;
+        height: 30%;
+        background-color: lightgray;
+        text-align: center;
+        padding-top: 20px;
+    } 
+    .bg-green{
+        background-color: lightgreen;
+    }
+    .bg-green::before{
+        content: 'O';
+        font-size: 150px;
+        color: green;        
+    }
+    .bg-red{
+        background-color: lightpink;
+    }
+    .bg-red::before{
+        content: 'X';
+        font-size: 150px;
+        color: red;        
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="item bg-green"></div>
+    <div class="item bg-red"></div>
+    <div class="item bg-green"></div>
+    <div class="item bg-red"></div>
+    <div class="item bg-green"></div>
+    <div class="item bg-red"></div>
+    <div class="item bg-red"></div>
+    <div class="item bg-green"></div>
+    <div class="item bg-red"></div>
+</div>
+</body>
+
+</html>

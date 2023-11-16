@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            /* 如果這裡使用 align-content ，下方的 align-self 就會失效 */
+            width: 80%;
+            height: 80vh;
+            margin: auto;
+            background-color: lightblue;
+        }
+        .item{
+            width: 30%;
+            height: 30%;
+            background-color: #ddd;
+
+        }
+        .item1{
+            background-color: lightpink;
+            align-self: flex-start;
+        }
+        .item6{
+            background-color: lightgreen;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item1">
+
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item">
+            
+        </div>
+        <div class="item item6">
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
