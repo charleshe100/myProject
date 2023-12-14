@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .myContainer{
+      background-color: lightblue;
+      width: 1200px;
+      height: 800px;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .box{
+      background-color: lightpink;
+      width: 300px;
+      height: 300px;
+      left: 0px;
+      bottom: 0px;
+      position: absolute;
+    }    
+    .myAnimation {
+      position: absolute;
+      animation-name: example;
+      animation-duration: 5s; 
+      animation-fill-mode: forwards; 
+    }
+
+    @keyframes example {
+      0%   {left:-300px; bottom:-300px;}      
+      100% {left:1500px; bottom: 1100px;}
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container myContainer">
+    <div class="row">
+      <div class="col">
+        <div class="box myAnimation"></div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <script>
+    // 1.綁定
+    
+
+    // 2.動作
+    
+
+
+  </script>
+</body>
+
+</html>

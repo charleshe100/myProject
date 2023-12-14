@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Timing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+  body {
+    background-color: black;
+  }
+
+  .box {
+    display: flex;
+    width: 100px;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    flex-direction: column;
+  }
+
+  .item {
+    width: 50px;
+    height: 50px;
+  }
+
+  .myAnimation {    
+    animation-name: example;
+    animation-duration: 7s;
+    animation-fill-mode:forwards;
+
+  }
+
+  @keyframes example {
+    0% {
+      transform: scale(0.25,0.25);
+    }
+    
+    100% {
+      transform: scale(0.75,0.75);
+    }
+  }
+
+</style>
+
+<body>
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <div class="col-2">
+        <div class="box rounded-pill">
+          <div class="item bg-secondary rounded-circle" id="light1"></div>
+          <div class="item bg-secondary rounded-circle" id="light2"></div>
+          <div class="item bg-secondary rounded-circle" id="light3"></div>
+        </div>
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-primary" id="myBtn">行人穿越道</button>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <img class="myAnimation"
+          src="https://s3-ap-northeast-1.amazonaws.com/file.phew.tw/content/images/img_2018_09_11_13_48_55.jpg"
+          alt="紅綠燈" id="myImg">
+      </div>
+    </div>
+  </div>
+
+  <!-- body 上面 -->
+  <script>
+    initFun
+    function initFun() {
+      myImg.setAttribute('class', 'd-none');
+      myBtn.setAttribute('class', 'btn btn-primary d-block')
+    }
+
+    function warningLight() {
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-warning rounded-circle');
+      }, 500);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-secondary rounded-circle');
+      }, 1000);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-warning rounded-circle');
+      }, 1500);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-secondary rounded-circle');
+      }, 2000);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-warning rounded-circle');
+      }, 2500);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-secondary rounded-circle');
+      }, 3000);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-warning rounded-circle');
+      }, 3500);
+      setTimeout(function () {
+        light2.setAttribute('class', 'item bg-secondary rounded-circle');
+      }, 4000);
+    }
+
+    // 綁定    
+    let light1 = document.getElementById('light1');
+    let light2 = document.getElementById('light2');
+    let light3 = document.getElementById('light3');
+    let myBtn = document.getElementById('myBtn');
+
+
+    initFun();
+
+    console.log('light1', light1);
+    console.log('light2', light2);
+    console.log('light3', light3);
+    console.log('myBtn', myBtn);
+
+    // 動作
+    myBtn.addEventListener('click', function () {
+      // console.log('myBtn ok');
+      myBtn.setAttribute('class', 'btn btn-primary d-none')
+
+      // time start
+      // setTimeout(function () {
+      //   light2.setAttribute('class', 'item bg-warning rounded-circle');
+      // }, 2500);
+      warningLight()
+
+      setTimeout(function () {
+        light1.setAttribute('class', 'item bg-danger rounded-circle');
+      }, 5000);
+
+      setTimeout(function () {
+        light3.setAttribute('class', 'item bg-success rounded-circle');
+        light1.setAttribute('class', 'item bg-secondary rounded-circle');
+        myImg.setAttribute('class', 'd-block myAnimation');
+      }, 8500);
+      // time end
+
+      //red
+      setTimeout(function () {
+        light3.setAttribute('class', 'item bg-secondary rounded-circle');
+        // myImg.setAttribute('class','d-block');
+        initFun();
+
+      }, 15500);
+
+
+    });
+  </script>
+
+</body>
+
+</html>

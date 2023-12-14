@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-around;         
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+        }        
+        .box1{
+            background-color: lightblue;
+            transform: rotate(20deg);            
+        }
+        .box2{
+            background-color: lightpink;
+            transform: rotate(-20deg);
+        }
+        .box1:hover{
+            transition: 1s;
+            transform: rotate(0deg) scale(1.2);
+            
+        }
+        .box2:hover{
+            transition: 1s;
+            transform: rotate(0deg) scale(1.2);
+        }
+        .box3:hover{
+            transition: 1s;
+            transform: rotate(-20deg) scale(1.2);
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">
+            <img src="https://picsum.photos/id/20/500/400" alt="">
+        </div><br>
+        <div class="box box2">
+            <img src="https://picsum.photos/id/49/500/400" alt="">
+        </div>
+        <div class="box box3">
+            <img src="https://picsum.photos/id/29/500/400" alt="">
+        </div><br>
+        <div class="box box1">
+            <img src="https://picsum.photos/id/39/500/400" alt="">
+        </div>
+        <div class="box box2">
+            <img src="https://picsum.photos/id/59/500/400" alt="">
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

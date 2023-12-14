@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body{
+      background-image: url(./imgs/bg.jpg);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </div>
+      </div>
+    </div>
+    <form class="d-flex" role="search">
+      <button class="btn btn-primary me-3" type="submit">Login</button>
+    </form>
+  </nav>
+  <div class="container">
+    <!-- carousel -->
+    <div class="row">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="./imgs/photo-03.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Merry Christmas！</h5>
+                <!-- <p>Some representative placeholder content for the first slide.</p> -->
+              </div>
+            </div>
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="./imgs/photo-02.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Merry Christmas！</h5>
+                <!-- <p>Some representative placeholder content for the second slide.</p> -->
+              </div>
+            </div>
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="./imgs/photo-01.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Merry Christmas！</h5>
+                <!-- <p>Some representative placeholder content for the third slide.</p> -->
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- card -->
+    <div class="row mt-4">
+      <div class="col-12 col-xl-3">
+        <div class="card w-80 mx-auto" style="width: 18rem;">
+          <img src="imgs/newTaipei.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">新北歡樂耶誕城</h5>
+            <p class="card-text">桑塔熊睽違已久出現在新北大樓主秀！桑塔熊滿懷期待的心情，著手準備這場由他當主角的2023新北耶誕城！</p>
+            <div class="d-grid gap-2">
+              <a href="https://christmasland.ntpc.gov.tw/index.php" class="btn btn-success">Go！</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <img src="./imgs/gingerbread.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">童話薑餅耶誕樹</h5>
+            <p class="card-text">知名台北聖誕節活動：新光三越南西店中山站【童話薑餅耶誕樹】將於即日起至2024年1月4日在心中山線型公園盛大開展！</p>
+            <div class="d-grid gap-2">
+              <a href="https://www.cosmopolitan.com/tw/lifestyle/travel/g45925979/jo-malone/"
+                class="btn btn-success">Go！</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <img src="./imgs/snow.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">【新光三越】時光之樹</h5>
+            <p class="card-text">由超過萬株雪白的手工葉片打造而成的17米高雪白時光之樹，八芒星在樹頂閃耀，象徵著人們的希望與美好願景。</p>
+            <div class="d-grid gap-2">
+              <a href="https://www.cosmopolitan.com/tw/lifestyle/travel/g45869689/shin-kong-mitsukoshi-christmas/" class="btn btn-success">Go！</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-3">
+        <div class="card w-80 mx-auto " style="width: 18rem;">
+          <div class="text-center mt-4 display-1 text-success mb-3">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">聖誕樹</h5>
+            <p class="card-text">聖誕樹 （英語：Christmas tree）
+              是聖誕節期間，慶祝中最有名的傳統擺設。在過去，通常人們在聖誕前後把一棵常綠植物如松樹弄進屋裡或者在戶外，並用聖誕燈和彩色的裝飾物裝飾，把一個星星放在樹的頂上。
+            </p>
+            <!-- <div class="d-grid gap-2">
+                <a href="#" class="btn btn-success text-light">Go somewhere</a>
+              </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- collapse -->
+    <div class="row mt-4">
+      <p class="d-inline-flex gap-1 w-100">
+        <a class="btn btn-danger col-8" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+          aria-expanded="false" aria-controls="multiCollapseExample1">聖誕節</a>
+        <button class="btn btn-danger col-4" type="button" data-bs-toggle="collapse"
+          data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">聖誕老人</button>
+      </p>
+      <div class="col-12 col-xl-8">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            又稱耶誕節，是基督教紀念耶穌降生的節日，西方社會定於12月25日，但東方教會的國家稱其主顯節，則大致定於1月7日。其為基督教禮儀年曆的重要節日，部分教派會透過將臨期及聖誕夜來準備，並以八日慶典與禮儀節期延續慶祝。聖誕節也是許多國家和地區、尤其是西方國家等以基督教文化為主流之地區的公共假日；在教會以外的場合，聖誕節已轉化成一種民俗節日，並常與日期相近的公曆新年合稱「聖誕及新年季」。
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            聖誕老人的原型為羅馬帝國時期米拉城的主教聖尼古拉（聖尼閣），他曾經在夜晚爬上他們的屋頂，把金幣從煙囪投入他們家，幫助她們逃過被賣的命運。後人感謝他，所以就定了聖尼古拉節，聖誕老人的譯音就是聖尼古拉。大航海時代以後，美國的可口可樂公司將現代形象的耶誕老人描繪出來，並加入聲音，變成我們今天看到的聖誕老人身穿紅大衣、頭戴聖誕帽的形象。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- dropdown -->
+    <div class="row mt-4">
+      <div class="btn-group col-4">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">Action</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
+      <div class="btn-group col-8">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">Action</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+
+  <script>
+    const myCarouselElement = document.querySelector('#myCarousel')
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 2000,
+      touch: false
+    })
+  </script>
+
+
+</body>
+
+</html>

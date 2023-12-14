@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        h5,p{
+            /* -webkit-text-stroke: 1.5px black; */
+            text-shadow: -1px -1px 0 black,
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- data-bs-ride="carousel" 使用 自動輪播功能 -->
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                            <!-- 設定 秒數 data-bs-interval="1000" -->
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <a href="https://tw.yahoo.com/">
+                                    <img src="https://picsum.photos/id/7/1920/540" class="d-block w-100" alt="...">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Yahoo!</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <a href="https://www.msn.com/zh-tw">
+                                    <img src="https://picsum.photos/id/17/1920/540" class="d-block w-100" alt="...">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>MSN</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <a href="https://news.google.com/home?hl=zh-TW&gl=TW&ceid=TW:zh-Hant">
+                                    <img src="https://picsum.photos/id/27/1920/540" class="d-block w-100" alt="...">
+                                </a>
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Google News</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        
+                    </div>
+    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                    crossorigin="anonymous">
+    
+    const myCarouselElement = document.querySelector('#myCarousel')
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 1000,
+        touch: false
+    //var : 是「可」重複宣告相同變數，區塊語法用 var 宣告可能會感染全域變數。 
+    //let : 是「不可」重複宣告相同變數，其作用域僅在「區塊作用域(Block Scope)」，一旦離開則會無作用，顯示無定義。 
+    //const : 特性同 let ，但更嚴謹。 一旦變數宣告為常數後，則無法再賦新值。
+    })
+    </script>
+</body>
+
+</html>
