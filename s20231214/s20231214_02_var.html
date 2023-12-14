@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- <button type="button" id="myBtn" onclick="oneFun()">one</button>
+  <button type="button" id="clearBtn" onclick="clearFun()">clear</button> -->
+
+
+  <script>
+    //let 變數
+    //const 常數
+    let x =10;
+    console.log('x', x);
+    x =500;
+    console.log('x', x);
+    
+    const y =10;
+    // console.log('y', y);
+    // y =500;
+    // console.log('y', y);
+    // 因為 const 是常數，用設定變數的方式去設定，會出現下列錯誤訊息
+    // Uncaught TypeError: Assignment to constant variable.
+
+    const myInput = document.getElementById('myInput');
+    console.log('myInput', myInput);
+    myInput.value = "55688";
+    console.log('myInput',myInput);
+
+    function aFun(){
+      let testStr = 'Hello aFun';
+      console.log('testStr', testStr);
+    }
+    
+    function bFun(){
+      let testStr = 'Hello bFun';
+      console.log('testStr', testStr);
+    }
+
+    aFun();
+    bFun();
+
+
+  </script>
+</body>
+
+</html>
