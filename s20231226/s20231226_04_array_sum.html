@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  
+
+
+  <script>
+    // sum 1~10
+    // array
+    // 1. 1~10 加總
+    // 2. 基數 加總
+    // 3. 偶數 加總
+    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // 1. 1~10 加總
+    let sum1 = 0;
+    data.forEach(function(value1){
+      console.log('value1',value1);
+      sum1 += value1;
+    })
+    console.log('sum1',sum1);  
+
+    // 2. 基數 加總
+    let sum2 = 0;
+    data.forEach(function(value2){
+      if(value2 % 2 == 1){
+        console.log('value2',value2);
+        sum2 += value2;
+      }
+    })
+    console.log('sum2',sum2);  
+
+    // 3. 偶數 加總
+    let sum3 = 0;
+    data.forEach(function(value3){
+      if(value3 % 2 == 0){
+        console.log('value3',value3);
+        sum3 += value3;
+      }
+    })
+    console.log('sum3',sum3);  
+    
+
+
+
+  </script>
+</body>
+
+</html>
