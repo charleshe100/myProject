@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+<div class="container mt-5">  
+  <div class="row mt-5">
+    <div class="col">
+      <button class="btn btn-primary myBtn" type="button">Botton1</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger myBtn" type="button">Botton2</button>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // 1.綁定 box
+    const myBtn = document.querySelectorAll('.myBtn');    
+
+    // 2.動作 
+    myBtn.forEach(function(value, key){
+      console.log('mouseover ok');
+      let getValue = value.innerText;
+
+      value.addEventListener('click',function(){
+        console.log(`${getValue} is clicked`);
+      })
+    });
+
+    
+
+
+  </script>
+</body>
+
+</html>

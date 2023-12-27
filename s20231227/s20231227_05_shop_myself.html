@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+<div class="container mt-5">  
+  <div class="row mt-5">
+    <div class="col">
+      <table class="table table-bordered align-middle text-center">
+        <tr>
+          <th>品名</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總額</th>
+        </tr>
+        <tr">
+          <td>
+            產品一
+            <img src="https://picsum.photos/id/1/100/100" alt="">
+          </td>
+          <td>
+            <input type="number" id="item1Price" class="form-control" value="10000">
+          </td>
+          <td>
+            <input type="number" id="item1Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" id="item1Total" class="form-control" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>產品二
+            <img src="https://picsum.photos/id/20/100/100" alt="">
+          </td>
+          <td>
+            <input type="number" id="item2Price" class="form-control" value="200">
+          </td>
+          <td>
+            <input type="number" id="item2Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" id="item2Total" class="form-control" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>產品三
+            <img src="https://picsum.photos/id/21/100/100" alt="">
+          </td>
+          <td>
+            <input type="number" id="item3Price" class="form-control" value="1000">
+          </td>
+          <td>
+            <input type="number" id="item3Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" id="item3Total" class="form-control" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            總價
+          </td>
+          <td>
+            <span id="totalSum"></span>
+          </td>
+          <td>
+            <span id="myR"></span>
+          </td>
+          <td>
+            <button type="submit" class="btn btn-primary" id="myBtn">滿12000打八折</button>
+          </td>
+        </tr>
+      </table>
+  </div>
+</div>
+
+  <script>
+    // 1.綁定 box
+    const item1Price = document.getElementById('item1Price');    
+    const item1Num = document.getElementById('item1Num');    
+    const item1Total = document.getElementById('item1Total');
+
+    const item2Price = document.getElementById('item2Price');    
+    const item2Num = document.getElementById('item2Num');    
+    const item2Total = document.getElementById('item2Total'); 
+
+    const item3Price = document.getElementById('item3Price');    
+    const item3Num = document.getElementById('item3Num');    
+    const item3Total = document.getElementById('item3Total'); 
+     
+    const totalSum = document.getElementById('totalSum');  
+    
+    item1Price.addEventListener('item1Price',calcSum1);
+    item2Price.addEventListener('item2Price',calcSum2);
+    item3Price.addEventListener('item3Price',calcSum3);
+    item1Num.addEventListener('item1Num',calcSum1);
+    item2Num.addEventListener('item2Num',calcSum2);
+    item3Num.addEventListener('item3Num',calcSum3);
+
+    // 2.動作 
+    item1Price.addEventListener('change', calcSum1);
+    item2Price.addEventListener('change', calcSum2);
+    item3Price.addEventListener('change', calcSum3);
+    item1Num.addEventListener('change',  calcSum1);
+    item2Num.addEventListener('change',  calcSum2);
+    item3Num.addEventListener('change',  calcSum3);
+
+    function calcSum1(){
+      let item1PriceValue = Number(item1Price.value) || 0; 
+      let item1NumValue = Number(item1Num.value) || 0; 
+      let sum1 = item1PriceValue * item1NumValue; 
+      item1Total.value = sum1;
+      updateToSum();
+    }
+    function calcSum2(){
+      let item2PriceValue = Number(item2Price.value) || 0; 
+      let item2NumValue = Number(item2Num.value) || 0; 
+      let sum2 = item2PriceValue * item2NumValue; 
+      item2Total.value = sum2;
+      updateToSum();
+    }
+    function calcSum3(){
+      let item3PriceValue = Number(item3Price.value) || 0; 
+      let item3NumValue = Number(item3Num.value) || 0; 
+      let sum3 = item3PriceValue * item3NumValue; 
+      item3Total.value = sum3;
+      updateToSum();
+    }  
+           
+
+    function updateToSum(){
+      let sum = Number(item1Total.value) + Number(item2Total.value) + Number(item3Total.value);
+      totalSum.innerText = `${item1Total.value} + ${item2Total.value} + ${item3Total.value} = ${sum}`;
+    }
+
+    myBtn.addEventListener('click',function(){
+      let getSum1 = Number(item1Total.value);
+      let getSum2 = Number(item2Total.value);
+      let getSum3 = Number(item3Total.value);
+      let getSum = getSum1 + getSum2 + getSum3 ;
+      if(getSum >= 12000){
+        getSum = getSum * 0.8;
+      }
+      myR.innerText = `折扣後：${getSum}`;
+
+    })
+
+
+    
+
+
+  </script>
+</body>
+
+</html>

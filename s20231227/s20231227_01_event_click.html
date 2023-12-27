@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <button type="button" id="myBtn1">myBtn1</button>
+  <!-- myBtn2 用onclick的方式 -->
+  <button type="button" id="myBtn2" onclick="console.log('myBtn2 ok')">myBtn2</button>
+
+  <!-- myBtn3 用onclick的方式，但如果內容過長，可在下面把內容放進function -->  
+  <button type="button" id="myBtn3" onclick="myBtn3()">myBtn3</button>
+
+  <!-- myBtn4 用onclick的方式，function內容可以放進變數 -->  
+  <button type="button" id="myBtn4" onclick="myBtn4(567)">myBtn4</button>
+  
+  <!-- myBtn4 用onclick的方式，可用 this 找到這個button -->  
+  <button type="button" id="myBtn5" onclick="console.log('this',this)">myBtn5</button>
+
+
+  <script>
+    function myBtn3(){
+      console.log('myBtn3 ok 123');
+      console.log('myBtn3 ok 456');
+    }
+
+    function myBtn4(data){
+      console.log('myBtn4 ok');
+      console.log('data', data);
+    }
+
+
+
+    // myBtn1 用在下方做綁定、動作的設定
+    // 1.綁定
+    const myBtn = document.getElementById('myBtn1');    
+
+    // 2.動作
+    myBtn1.addEventListener('click',function(){
+      console.log('myBtn1 ok');
+    })
+
+
+  </script>
+</body>
+
+</html>
