@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hover Rows</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <h2>Hover Rows</h2>
+    <p>The .table-hover class enables a hover state on table rows:</p>
+    <table class="table table-hover align-middle text-center">
+      <thead>
+        <tr>
+          <th>品名</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/id/100/160/120" alt="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="100" readonly>
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="100" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/id/200/160/120" alt="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="200" readonly>
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="200" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://picsum.photos/id/300/160/120" alt="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="300" readonly>
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="300" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>總金額</td>
+          <td><span id="totalSpan"></span></td>
+          <td><span id="resultSpan"></span></td>
+          <td><button type="submit" class="btn btn-primary" id="myBtn">滿500打八折</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // 1.class 綁定
+    $(document).ready(function () {
+      function sumFun() {
+        let sum = 0;
+        myTotal.each(function (index, element) {
+          console.log('indx', index);
+          console.log('element', element);
+          console.log('this', this);
+          let getValue = Number($(this).val());
+          console.log(('getValue', getValue));
+          sum += getValue;
+        });
+        console.log('sum', sum);
+        totalSpan.text(sum);
+      }
+
+      const myPrice = $('.my-price');
+      const myNum = $('.my-num');
+      const myTotal = $('.my-total');
+      const totalSpan = $('#totalSpan');
+      const resultSpan = $('#resultSpan');
+      const myBtn = $('#myBtn');
+
+      console.log('myPrice', myPrice);
+      console.log('myNum', myNum);
+      console.log('myTotal', myTotal);
+
+      // init 初始化
+      sumFun();
+
+      // 2.動作
+      myNum.change(function () {
+        // 用 console.log 確定 this 是什麼，input輸入數字才會跑出來
+        // console.log('this', this);
+        // console.log('$(this)', $(this));
+        // console.log('$(this).parent()', $(this).parent());
+        // console.log('$(this).parent().parent()', $(this).parent().parent());
+        // console.log('$(this).parent().parent().find(".my-price")', $(this).parent().parent().find(".my-price"));
+        // jq parent() 往上一層找
+        // jq find() 往內找
+
+        let trObj = $(this).parent().parent();
+        let nowPrice = trObj.find('.my-price');
+        let nowNum = trObj.find('.my-num');
+        let nowTotal = trObj.find('.my-total');
+
+        console.log('trObj', trObj);
+        console.log('nowPrice', nowPrice);
+        console.log('nowNum', nowNum);
+        console.log('nowTotal', nowTotal);
+
+        let getPrice = Number(nowPrice.val());
+        let getNum = Number(nowNum.val());
+        let resultTotal = getPrice * getNum;
+        nowTotal.val(resultTotal);
+
+
+        // change時，重新呼叫
+        sumFun();
+      })
+      
+      myBtn.click(function(){
+        sumFun();        
+        if(sum>=500){
+          sum = sum * 0.8;
+          resultSpan.text(`恭喜您！八折優惠價：${sum}`);
+        }else{
+          sum = sum;
+        }
+      })
+    });
+
+
+
+  </script>
+</body>
+
+</html>

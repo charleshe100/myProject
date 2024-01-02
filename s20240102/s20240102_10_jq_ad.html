@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>tabs fade</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad1" data-ani="toggle" class="btn btn-primary myBtn" type="button">page1</button>              
+        </div>
+          <div class="allPages" id="ad1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quae amet error impedit veritatis,
+        soluta deserunt, deleniti odio ut quidem harum tempore beatae officia dolorum, neque laudantium doloremque illo.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, distinctio. Ducimus at veritatis animi repudiandae repellendus, doloribus adipisci et. Quaerat molestias accusantium maxime officiis modi obcaecati fugiat, necessitatibus ipsam quas.
+        Ad rerum voluptatem repudiandae perspiciatis ex. Tenetur similique voluptatibus perferendis sapiente recusandae error hic? Obcaecati exercitationem delectus placeat unde, itaque doloribus nam qui, libero cupiditate cumque recusandae? Asperiores, voluptate vel.
+        Unde, nostrum minus optio odio at harum, ab, temporibus accusantium corporis assumenda eligendi repellat! Eum, rerum laboriosam, distinctio at necessitatibus perferendis dicta animi amet voluptas ex iusto velit saepe dolorem?
+        </div>      
+      </div>   
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad2" data-ani="fadeToggle" class="btn btn-primary myBtn" id="page2Btn" type="button">page2</button>
+        </div>
+        <div class="allPages text-warning" id="ad2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quae amet error impedit veritatis,
+          soluta deserunt, deleniti odio ut quidem harum tempore beatae officia dolorum, neque laudantium doloremque illo.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, distinctio. Ducimus at veritatis animi repudiandae repellendus, doloribus adipisci et. Quaerat molestias accusantium maxime officiis modi obcaecati fugiat, necessitatibus ipsam quas.
+          Ad rerum voluptatem repudiandae perspiciatis ex. Tenetur similique voluptatibus perferendis sapiente recusandae error hic? Obcaecati exercitationem delectus placeat unde, itaque doloribus nam qui, libero cupiditate cumque recusandae? Asperiores, voluptate vel.
+          Unde, nostrum minus optio odio at harum, ab, temporibus accusantium corporis assumenda eligendi repellat! Eum, rerum laboriosam, distinctio at necessitatibus perferendis dicta animi amet voluptas ex iusto velit saepe dolorem?
+        </div>      
+    </div>
+    
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad3" data-ani="slideToggle" class="btn btn-primary myBtn" id="page3Btn" type="button">page3</button>
+        </div>
+        <div class="allPages text-success" id="ad3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatem quae amet error impedit veritatis,
+          soluta deserunt, deleniti odio ut quidem harum tempore beatae officia dolorum, neque laudantium doloremque illo.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, distinctio. Ducimus at veritatis animi repudiandae repellendus, doloribus adipisci et. Quaerat molestias accusantium maxime officiis modi obcaecati fugiat, necessitatibus ipsam quas.
+          Ad rerum voluptatem repudiandae perspiciatis ex. Tenetur similique voluptatibus perferendis sapiente recusandae error hic? Obcaecati exercitationem delectus placeat unde, itaque doloribus nam qui, libero cupiditate cumque recusandae? Asperiores, voluptate vel.
+          Unde, nostrum minus optio odio at harum, ab, temporibus accusantium corporis assumenda eligendi repellat! Eum, rerum laboriosam, distinctio at necessitatibus perferendis dicta animi amet voluptas ex iusto velit saepe dolorem?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    // 1.綁定
+    $(document).ready(function () {
+      const myBtn = $('.myBtn');   
+      const allPages = $('.allPages'); 
+
+      allPages.hide();      
+      // 2.動作
+      myBtn.click(function () {
+        console.log('this', this);
+        let getDataAd = $(this).attr('data-ad');
+        let getDataAni = $(this).attr('data-ani');
+        // 取自 this 裡的 data-page的attribute，例如 #page1，就會連結到 id=page1
+        console.log('getDataAd', getDataAd);
+        console.log('getDataAni', getDataAni);
+        
+        switch(getDataAni){
+          case 'toggle':
+            $(getDataAd).toggle(2000);
+          break;
+          case 'fadeToggle':
+            $(getDataAd).fadeToggle(2000);
+          break;
+          case 'slideToggle':
+            $(getDataAd).slideToggle(2000);
+          break;
+          default:
+          break;
+        }
+    });
+  });
+
+
+
+
+
+  </script>
+</body>
+
+</html>
