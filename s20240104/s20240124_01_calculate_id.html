@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>calculate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+  <div class="container mt-5">
+    <div class="row text-center">
+      <div class="col col-2">
+        <input type="number" id="num1" name="num1">
+      </div>      
+      <div class="col col-2">
+        <select class="form-select" id="selOp">          
+          <!-- <option value="">請選擇運算式</option> -->
+          <option value="add">+</option>
+          <option value="sub">-</option>
+          <option value="mul">x</option>
+          <option value="div">/</option>
+          <!-- value 可以用數字，例如分別為 1 2 3 4，存到資料庫會比較省空間-->
+        </select>
+      </div>
+      <div class="col col-2">
+        <input type="number" id="num2" name="num2">
+      </div>
+      <div class="col col-1">
+        <button class="btn btn-primary" id="myBtn">=</button>
+      </div>
+      <div class="col col-2">
+        <input type="number" id="resultInp" name="resultInp" readonly>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const num1= $("#num1");
+      const num2= $("#num2");
+      const selOp= $("#selOp");      
+      const myBtn= $("#myBtn");
+      const resultInp= $("#resultInp");
+
+      // console.log('num1', num1);
+      // console.log('num2', num2);
+      // console.log('addSel', addSel);
+      // console.log('subSel', subSel);
+      // console.log('mulSel', mulSel);
+      // console.log('divSel', divSel);
+      // console.log('myBtn', myBtn);
+      // console.log('result', result);          
+      
+
+      myBtn.click(function(){
+        // console.log('click ok');
+        let getNum1 = Number(num1.val());
+        let getNum2 = Number(num2.val());
+        let selOpVal = selOp.val();
+        let result;
+
+        // console.log('getNum1', getNum1);
+        // console.log('getNum2', getNum2);
+        // console.log('selOpVal',selOpVal );
+        // console.log('result', result);
+
+        if(num1.val().length <=0 && num2.val().length <=0 ){
+        alert(`請輸入數字`);
+        return false;
+        // return false 是停止後續動作
+        }
+
+        switch(selOpVal){
+          case"add":
+            result = getNum1 + getNum2;
+          break;
+          case"sub":
+            result = getNum1 - getNum2;
+          break;
+          case"mul":
+            result = getNum1 * getNum2;
+          break;
+          case"div":
+            result = getNum1 / getNum2;
+          break;
+          // default:
+            // result = alert(`請選擇運算式`);
+          // break;
+        }
+        resultInp.val(result) 
+      })
+
+
+
+
+    });
+
+
+
+  </script>
+</body>
+
+</html>
