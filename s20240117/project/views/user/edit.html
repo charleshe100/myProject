@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <style>
+        .container{
+        margin: auto;
+        margin-top: 150px;
+        padding: 100px;
+        text-align: center;
+        height: 200px;
+        width: 300px;
+        background-color: lightblue;
+        border-radius: 20px;
+        }
+        input{
+            margin-top: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <form action="../../api/login/login.php" method="post">
+            <div class="row">
+                <h3>使用者更新</h3>
+                <div class="col">
+                    <label for="acc">帳號：</label>
+                    <input type="text" name="acc" id="acc">
+                </div>
+                <div class="col">
+                    <label for="pw">密碼：</label>
+                    <input type="password" name="pw" id="pw">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="更新">
+                <input type="reset" value="重置">
+            </div>
+        </form>        
+    </div>
+</body>
+</html>

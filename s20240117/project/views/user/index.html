@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user</title>
+    <style>
+        .container{
+            margin: auto;
+            text-align: center;
+            width: 60%;
+            
+        }
+        table{
+            width: 100%;
+            margin: auto;
+            font-size: 28px;
+        }
+        table,tr,td,th{
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+        }
+        button{
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .text-end{
+            text-align: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User List</h1>
+        <div class="text-end">
+            <a href="create.html">
+                <button type="button">Add</button>
+            </a>
+        </div>
+        <table>
+            <tr>
+                <td width="10%">id</td>
+                <td width="45%">name</td>
+                <td>oprate</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <a href="../user/edit.html?id=1">
+                        amy
+                    </a>
+                </td>
+                <td>
+                    <a href="../user/edit.html?id=1">
+                        <button type="button">Edit</button></a>
+                    <a href="../../api/user/del.php"><button type="button">Del</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

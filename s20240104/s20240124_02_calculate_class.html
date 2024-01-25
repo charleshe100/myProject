@@ -12,30 +12,33 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+
 <body>
   <div class="container mt-5">
     <div class="row">
-      <div class="col col-2">
-        <input type="number" class="num" name="num1">
+      <div class="col col-12 col-xl-2 mb-3">
+        <input type="number" class="num1" name="num1">
       </div>      
-      <div class="col col-1">
-        <select class="form-select" id="selOp">
-          <option value="add">加</option>
-          <option value="sub">減</option>
-          <option value="mul">乘</option>
-          <option value="div">除</option>
+      <div class="col col-2 col-xl-2 mb-3">
+        <select class="form-select selOp">          
+          <!-- <option value="">請選擇運算式</option> -->
+          <option value="add">+</option>
+          <option value="sub">-</option>
+          <option value="mul">x</option>
+          <option value="div">/</option>
+          <!-- value 可以用數字，例如分別為 1 2 3 4，存到資料庫會比較省空間-->
         </select>
       </div>
-      <div class="col col-2">
+      <div class="col col-12 col-xl-2 mb-3">
         <input type="number" class="num2" name="num2">
       </div>
-      <div class="col col-1">
-        <button class="btn btn-primary" id="myBtn">等於</button>
+      <div class="col col-2 col-xl-2 mb-3">
+        <button class="btn btn-primary myBtn">=</button>
       </div>
-      <div class="col col-2">
-        <input type="number" id="resultInp" name="resultInp">
+      <div class="col col-12 col-xl-2 mb-3">
+        <input type="number" class="resultInp" name="resultInp" readonly>
       </div>
-    </div>
+    </div>    
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -46,9 +49,9 @@
     $(document).ready(function () {
       const num1= $(".num1");
       const num2= $(".num2");
-      const selOp= $("#selOp");      
-      const myBtn= $("#myBtn");
-      const resultInp= $("#resultInp");
+      const selOp= $(".selOp");      
+      const myBtn= $(".myBtn");
+      const resultInp= $(".resultInp");
 
       // console.log('num1', num1);
       // console.log('num2', num2);
@@ -57,13 +60,39 @@
       // console.log('mulSel', mulSel);
       // console.log('divSel', divSel);
       // console.log('myBtn', myBtn);
-      // console.log('result', result);      
+      // console.log('result', result);
+               
+      
 
       myBtn.click(function(){
-        let getNum1 = Number(num1.val());
-        let getNum2 = Number(num2.val());
-        let selOpVal = selOp.val();
-        let result;
+        // console.log('click ok');
+        // console.log('this', $(this));          
+        // console.log('$(this).parten()', $(this).parent()); 
+        // console.log('$(this).parten().parten()', $(this).parent().parent()); 
+        // console.log('$(this).parten().parten().parten()', $(this).parent().parent().parent()); 
+
+        const nowRow = $(this).parent().parent();
+        const nowNum1 = nowRow.find('.num1');
+        const nowNum2 = nowRow.find('.num2');
+        const nowselOp = nowRow.find('.selOp');
+        const nowresultInp = nowRow.find('.resultInp');
+        // console.log('nowresultInp', nowresultInp);
+
+        
+        let getNum1 = Number(nowNum1.val());
+        let getNum2 = Number(nowNum2.val());
+        let selOpVal = nowselOp.val();
+
+        // console.log('getNum1', getNum1);
+        // console.log('getNum2', getNum2);
+        // console.log('selOpVal',selOpVal );
+        // console.log('result', result);
+
+        if(nowNum1.val().length <=0 || nowNum2.val().length <=0 ){
+        alert(`請輸入數字`);
+        return false;
+        // return false 是停止後續動作
+        }
 
         switch(selOpVal){
           case"add":
@@ -78,11 +107,17 @@
           case"div":
             result = getNum1 / getNum2;
           break;
-          default:
-            result = '請選擇運算式'
+          // default:
+            // result = alert(`請選擇運算式`);
+          // break;
         }
-        resultInp.val(result) 
+        // console.log(result);
+        nowresultInp.val(result) 
       })
+
+
+
+
     });
 
 
