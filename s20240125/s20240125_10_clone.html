@@ -103,7 +103,7 @@
         // console.log('myContainer',myContainer);
         let addRow=myContainer.find('.addRow').last()
         // console.log('addRow',addRow);
-        addRow.clone().appendTo(myContainer)
+        addRow.clone(true).appendTo(myContainer)
       });
 
       copyBtn.click(function (e) {

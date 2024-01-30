@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Shop Sum</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-5 border border-primary border-2 rounded-4 p-3">
+    <div class="row">
+      <h3>Add</h3>
+      <div>
+        <button id="sumBtn" type="button" class="btn btn-danger">合計</button>
+        <span id="mySum">0</span> 元
+      </div>
+      <div class="clo mt-3">
+        <button type="button" class="myBtn btn btn-primary" data-name="產品1" data-price="100" data-img="20">產品1</button>
+        <button type="button" class="myBtn btn btn-primary" data-name="產品2" data-price="200" data-img="30">產品2</button>
+        <button type="button" class="myBtn btn btn-primary" data-name="產品3" data-price="300" data-img="40">產品3</button>
+      </div>
+      <div class="clo mt-3">
+        <button type="button" class="myBtn btn btn-success" data-name="產品4" data-price="400" data-img="50">產品4</button>
+        <button type="button" class="myBtn btn btn-success" data-name="產品5" data-price="500" data-img="60">產品5</button>
+        <button type="button" class="myBtn btn btn-success" data-name="產品6" data-price="600" data-img="70">產品6</button>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="box">
+          <table class="table text-center myTable align-middle">
+            <thead>
+              <tr>
+                <th>品名</th>                
+                <th>Desc</th>
+                <th>Oprate</th>
+              </tr>
+            </thead>
+            <tbody>    
+
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      // function
+      function sumFun(){
+        // console.log('sumBtn ok');
+        let myTotal=$('.myTotal')
+        let getMyTotalCount=myTotal.length //length是myTotal的數量
+        // console.log('myTotal', myTotal)
+        // console.log('getMyTotalCount', getMyTotalCount)
+        let sum=0
+        myTotal.each(function(index, value){
+          // console.log('index',index);
+          // console.log('value',value);
+          sum=sum+ Number($(value).text())
+        })
+        // console.log('final sum', sum)
+        mySum.text(sum)
+        } 
+
+      function delFun(nowThis){
+        // console.log('del ok');
+        let nowTr=$(nowThis).parent().parent()
+        nowTr.remove()
+        sumFun() //要再計算
+
+        // 若要留一個tr
+        // 抓出tr數量
+        // 如果tr<=2，不能刪除（因為還有個th的tr，所以是1+1）
+
+        // 抓出tr數量
+        // let getTrCount = $('tr').length;
+        // console.log('getTrCount', getTrCount);
+
+        // 如果tr<=2，不能刪除
+        // if (getTrCount > 2) { 
+        //   let nowTr = $(nowThis).parent().parent();
+        //   console.log('nowTr',nowTr);
+        //   nowTr.remove();
+        // }
+        // 但因為這裡不需留一個tr, 所以不用此判斷式
+
+      }
+
+      function cloneFun(nowThis){
+        // console.log('clone ok');
+        let nowTr=$(nowThis).parent().parent()
+        nowTr.clone(true).insertAfter(nowTr)
+        sumFun() //要再計算
+      }
+
+      // 綁定
+      const myBtn=$('.myBtn')
+      const mySum=$('#mySum')
+      const sumBtn=$('#sumBtn')
+      let delBtn=$('.delBtn')
+      let cloneBtn=$('.cloneBtn')
+
+      // 動作
+      delBtn.click(function(e){
+        delFun(this)
+      })  
+      cloneBtn.click(function(e){
+        cloneFun(this)
+      })  
+      sumBtn.click(function(e){
+        sumFun(this)
+      })
+          
+      myBtn.click(function(e){
+        let name=$(this).data('name')
+        let price=$(this).data('price')
+        let imgUrl=$(this).data('img')
+
+        let myTr=`
+        <tr>              
+              <td>
+                <img class="rounded-circle" src="https://picsum.photos/id/${imgUrl}/100/100">                
+              </td>
+              <td class="text-start">                
+                ${name} <br>
+                單價：${price} 元 <br>             
+                <div class="input-group w-50">
+                  數量：<input type="number" class="quantity form-control" name="" id="" max="10" min="1" value="1"></div>  
+                <hr>            
+                小計：<span class="myTotal">${price} 元</span>         
+              </td>              
+              <td>
+                <button type="button" class="cloneBtn btn btn-warning"><i class="fa-regular fa-copy"></i></button>
+                <button type="button" class="delBtn btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+              </td>
+            </tr>
+        `
+        $('tbody').append(myTr)
+
+        // 因為只有append上面那段tr，但沒有複製到綁定，所以要再重新定義綁定
+        // last() 是讓它只綁定最後一個，而不會全部新增的都綁定
+        addDelBtn=$('.delBtn').last()
+        addCloneBtn=$('.cloneBtn').last()
+        addQuantity=$('.quantity').last() //數量
+
+        sumFun() // 先算一次，下面change結束後，裡面的sumFun()會再算一次
+
+        addDelBtn.click(function(e){
+          delFun(this)
+        })        
+        addCloneBtn.click(function(e){
+          cloneFun(this)
+        })
+        
+        addQuantity.change(function(e){
+          // console.log('$(this)',$(this));
+          let getQuantity=Number($(this).val()) // 數量的數字
+          let closestQuantityTr=$(this).parent().parent().parent()
+          let findTotal=closestQuantityTr.find('.myTotal') //經由tr找到裡面的小計myTotal
+          // console.log('getQuantity',getQuantity);
+          // console.log('closestQuantityTr',closestQuantityTr)
+          let total=getQuantity * price // 數量的數字 * button的data-price的price
+          // console.log('total',total)
+          findTotal.text(total)
+
+          sumFun()
+        })       
+      })            
+    })
+
+  </script>
+</body>
+
+</html>
