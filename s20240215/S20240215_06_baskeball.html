@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container text-center mt-5 w-50">
+        <h2>投籃大賽</h2>
+        <div class="row border border-1 border-dark rounded-3 mb-3 d-flex flex-column">
+            <div class="col my-2">分數</div>
+            <div class="col text-success my-2"><h4 class="fw-bold">歷史最高分數<span id="mySpan"></span></h4></div>
+            <div class="col text-danger my-2"><span id="myFraction">分數</span></div>
+            <hr>
+            <div class="col text-primary my-2"><span id="myTime">倒數計時 10秒</span></div>
+        </div>
+        <div class="row border border-1 border-dark rounded-3 p-3">
+            <div class="col">
+                <button id="startBtn" type="button" class="btn btn-primary my-1">開始</button>
+                <button id="shootBtn" type="button" class="btn btn-primary my-1">投籃</button>
+                <button id="endBtn" type="button" class="btn btn-danger my-1">結束</button>
+                <button id="resetBtn" type="reset" class="btn btn-success my-1">重置</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto w-50 mt-5" id="point3">
+        <div class="row d-flex">
+            <div class="col">                
+                    <img src="https://img.ltn.com.tw/Upload/sports/page/800/2016/02/06/211.jpg" alt="">
+            </div>
+            <div class="col">
+                <h3>3分球時間…</h3>
+            </div>
+        </div>
+    </div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function(){
+        const mySpan=$('#mySpan')
+        const myTime=$('#myTime')
+        const myFraction=$('#myFraction')
+        const startBtn=$('#startBtn')
+        const shootBtn=$('#shootBtn')
+        const resetBtn=$('#resetBtn')
+        const endBtn=$('#endBtn')
+        const point3=$('#point3')
+        let score=0
+        let nowTime=10
+        let highestScore=localStorage.getItem('highestScore')
+        mySpan.text(highestScore)
+        // console.log('mySpan',mySpan);
+        // console.log('myFraction',myFraction);
+        // console.log('myTime',myTime);
+        
+        shootBtn.hide()
+        endBtn.hide()
+        point3.hide()
+
+        startBtn.click( function() {
+            // console.log('startBtn ok');
+            myFraction.text(score)
+            startBtn.hide()
+            shootBtn.show()            
+            
+            const myInterval=setInterval(function(){              
+              if(nowTime <= 0 ){
+                clearInterval(myInterval)
+                shootBtn.hide() 
+                endBtn.show()
+                let getScore=score
+                if(highestScore < getScore){
+                    localStorage.setItem('highestScore',getScore)
+                } 
+                myTime.text('倒數計時')
+              }
+              myTime.text(nowTime)
+              nowTime -=1
+            }, 1000);
+        })
+
+        shootBtn.click(function (e) {   
+            if(nowTime>5){
+                score +=2
+            }else{                
+                score +=3
+                point3.show()
+            }          
+            myFraction.text(score)                            
+        });            
+
+        resetBtn.click( function() {
+            // console.log('resetBtn ok');
+            score=0
+            nowTime=10
+            myFraction.text('分數')
+            myTime.text('倒數計時 10秒')
+            startBtn.show()
+            endBtn.hide()
+            point3.hide()
+            
+        })
+
+    })
+    
+
+
+  </script>
+</body>
+
+</html>

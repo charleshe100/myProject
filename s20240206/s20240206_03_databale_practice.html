@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dog Adopt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
+</head>
+
+<body>  
+  <div class="container w-75 my-3">
+    <table id="myTable" class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>圖片名稱</th>
+                <th>收容 編號</th>                
+                <th class="w-25">實際所在地</th>                
+                <th>品種</th>
+                <th>性別</th>
+                <th>體型</th>
+                <th>年紀</th>                
+                <th class="w-25">開放認養時間(起)</th>
+                <th class="w-25">連絡電話</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr> -->
+        </tbody>
+    </table>
+
+  </div>
+  
+  <!-- <form action="./data/TransService.json"></form> -->
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+
+  <script>
+    $(document).ready(function(){
+        const myTable=$('#myTable')
+        const tbody=$('tbody')
+        let url='./s20240206_03_databale_curl.php'
+        $.ajax({
+            type: "get",
+            url: url,
+            // data: "data",
+            dataType: "json",
+            success: function (res) {
+                // console.log('res',res);
+                $.each(res, function (key, value) { 
+                    if(value.animal_kind == '狗' &&  value.album_file != '' && value.animal_status == 'OPEN' && value.animal_opendate != ''){                        
+                    // console.log('key',key);
+                    // console.log('value',value);
+                    // console.log('value.album_file',value.album_file);
+                    let contect=`
+                    <tr>
+                        <td>
+                            <img src="${value.album_file}" width="100px" height="100px">
+                        </td>
+                        <td>${value.animal_subid}</td>                        
+                        <td>${value.animal_place}</td>                        
+                        <td>${value.animal_Variety}</td>
+                        <td>${value.animal_sex}</td>
+                        <td>${value.animal_bodytype}</td>
+                        <td>${value.animal_age}</td>                        
+                        <td>${value.animal_opendate}</td>
+                        <td>${value.shelter_tel}</td>
+                    </tr>
+                    `
+                    tbody.append(contect);
+                    }
+                    
+                    
+                });
+            $('#myTable').DataTable();               
+            
+        }
+        });
+
+    })
+    
+    
+
+
+  </script>
+</body>
+
+</html>
